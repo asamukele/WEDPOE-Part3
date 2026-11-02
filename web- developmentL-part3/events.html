@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Search upcoming Matric Dance Foundation events and browse our photo gallery of outfits, hair styling and community celebrations.">
+
+    <title>Events & Gallery | The Matric Dance Foundation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="The Matric Dance Foundation">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="container navigation">
+
+            <a href="index.html" class="logo">
+               The  Matric<span>Dance Foundation</span>
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="service.html">What We Do</a>
+                <a href="events.html" class="active">Events</a>
+                <a href="donate.html">Support Us</a>
+                <a href="enquiry.html">Enquiry</a>
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+<section class="page-hero"><div class="container"><p class="eyebrow">WHAT'S ON</p><h1>Events &amp; Gallery</h1><p>Find a drive near you and see the moments we help create.</p></div></section>
+<section class="section"><div class="container">
+<h2>Upcoming events</h2>
+<div class="event-tools">
+<input type="search" id="event-search" placeholder="Search by name, city or keyword" aria-label="Search events">
+<select id="event-filter" aria-label="Filter by type"><option value="all">All types</option><option>Clothing</option><option>Beauty</option><option>Community</option></select>
+<select id="event-sort" aria-label="Sort events"><option value="date">Sort by date</option><option value="title">Sort by name</option></select>
+</div>
+<p id="event-count" aria-live="polite"></p>
+<div id="event-list" class="event-list"></div>
+</div></section>
+<section class="section section-alt"><div class="container">
+<h2>Photo gallery</h2><p>Click a photo to view it larger.</p>
+<div class="gallery">
+<img src="images/matric-dance-learners-600.jpg" data-large="images/matric-dance-learners.jpg" alt="Matric learners celebrating at their matric dance" loading="lazy" width="600" height="569">
+<img src="images/matric-dance-outfits.jpg" alt="Formal outfits prepared for matric dance learners" loading="lazy">
+<img src="images/hair-styling-service.jpg" alt="Volunteer stylist doing a learner's hair" loading="lazy">
+<img src="images/community-event.webp" alt="Learners celebrating together at a community event" loading="lazy">
+</div></div></section>
+<div id="lightbox" class="lightbox" hidden role="dialog" aria-label="Enlarged photo"><figure><img src="" alt=""><figcaption></figcaption></figure></div>
+</main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <a href="index.html" class="logo footer-logo">
+                   The  Matric<span>Dance Foundation</span>
+                </a>
+
+                <p>
+                    Creating memories and opening doors.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="service.html">What We Do</a>
+                <a href="donate.html">Support Us</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <p>info@TheMatricDanceFoundation.org</p>
+                <p>South Africa</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 The Matric Dance Foundation.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>

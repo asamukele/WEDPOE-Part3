@@ -1,0 +1,1094 @@
+/* =========================================================
+   MATRIC MOMENTS FOUNDATION
+   Main External Stylesheet
+
+   This stylesheet is linked to all HTML pages.
+
+   CSS concepts demonstrated:
+   - CSS Reset
+   - Element selectors
+   - Class selectors
+   - Descendant selectors
+   - Flexbox
+   - CSS Grid
+   - Relative units
+   - Hover and focus pseudo-classes
+   - Media queries
+   - Responsive images
+   - Desktop, tablet and mobile layouts
+   ========================================================= */
+
+
+/* =========================================================
+   1. CSS RESET
+   Removes browser default spacing and creates consistency.
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #252525;
+    background-color: #ffffff;
+}
+
+
+/* Remove default link styling */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Make images responsive */
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Form elements inherit the website font */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+
+/* =========================================================
+   2. COLOUR VARIABLES
+   CSS variables make the website easier to maintain.
+   ========================================================= */
+
+:root {
+
+    --primary: #7b3f72;
+    --primary-dark: #572b50;
+    --secondary: #d9a441;
+
+    --dark: #222222;
+    --light: #faf8f6;
+    --white: #ffffff;
+
+    --text: #4a4a4a;
+    --border: #e4ded9;
+
+    --shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+
+    --radius: 0.75rem;
+
+}
+
+
+/* =========================================================
+   3. REUSABLE CONTAINER
+   Uses percentage width for responsiveness.
+   ========================================================= */
+
+.container {
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   4. HEADER
+   Flexbox is used for navigation layout.
+   ========================================================= */
+
+.site-header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.navigation {
+    min-height: 5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--primary);
+}
+
+
+.logo span {
+    color: var(--secondary);
+}
+
+
+/* Navigation */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+
+.main-nav a {
+    position: relative;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    color: var(--text);
+
+    padding: 0.5rem 0;
+}
+
+
+/* Navigation hover effect */
+
+.main-nav a:hover {
+    color: var(--primary);
+}
+
+
+/* Keyboard accessibility */
+
+.main-nav a:focus-visible,
+.btn:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+
+/* Active navigation item */
+
+.main-nav a.active {
+    color: var(--primary);
+}
+
+
+/* Underline active page */
+
+.main-nav a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--secondary);
+}
+
+
+/* =========================================================
+   5. HERO SECTION
+   CSS Grid creates a two-column desktop layout.
+   ========================================================= */
+
+.hero {
+    background-color: var(--light);
+
+    padding: 6rem 0;
+}
+
+
+.hero-content {
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+
+    gap: 4rem;
+}
+
+
+.eyebrow {
+    color: var(--primary);
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    margin-bottom: 1rem;
+}
+
+
+.hero h1 {
+    max-width: 45rem;
+
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.05em;
+
+    color: var(--dark);
+
+    margin-bottom: 1.5rem;
+}
+
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+
+.hero-description {
+    max-width: 38rem;
+
+    color: var(--text);
+
+    font-size: 1.1rem;
+
+    margin-bottom: 2rem;
+}
+
+
+/* Hero image */
+
+.hero-image img {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 1.5rem;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================================
+   6. BUTTONS
+   ========================================================= */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+}
+
+
+.btn {
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 3rem;
+
+    padding: 0.75rem 1.5rem;
+
+    border-radius: 999px;
+
+    font-weight: 700;
+
+    border: 2px solid transparent;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+
+.btn-secondary {
+    border-color: var(--primary);
+    color: var(--primary);
+    background-color: transparent;
+}
+
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+
+.btn-light {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+
+/* =========================================================
+   7. GENERAL SECTIONS
+   ========================================================= */
+
+.section {
+    padding: 5rem 0;
+}
+
+
+.section-alt {
+    background-color: var(--light);
+}
+
+
+.section-heading {
+    max-width: 45rem;
+
+    margin-bottom: 3rem;
+}
+
+
+.section-heading h2,
+.two-column h2,
+.contact-grid h2,
+.donation-grid h2 {
+    color: var(--dark);
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+
+    margin-bottom: 1rem;
+}
+
+
+.section-heading h2 span {
+    color: var(--primary);
+}
+
+
+.section-heading > p:last-child {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   8. FEATURE GRID
+   CSS Grid creates three columns on desktop.
+   ========================================================= */
+
+.feature-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+}
+
+
+.feature-card {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 2rem;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.feature-card:hover {
+    transform: translateY(-0.4rem);
+
+    box-shadow: var(--shadow);
+}
+
+
+.feature-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+
+    display: grid;
+    place-items: center;
+
+    background-color: #f5e9f2;
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 1.5rem;
+}
+
+
+.feature-card h3 {
+    font-size: 1.3rem;
+
+    margin-bottom: 0.75rem;
+
+    color: var(--dark);
+}
+
+
+.feature-card p {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   9. CTA SECTION
+   ========================================================= */
+
+.cta-section {
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    padding: 4rem 0;
+}
+
+
+.cta-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 2rem;
+}
+
+
+.cta-section .eyebrow {
+    color: var(--secondary);
+}
+
+
+.cta-section h2 {
+    max-width: 40rem;
+
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   10. FOOTER
+   ========================================================= */
+
+.site-footer {
+    background-color: var(--dark);
+
+    color: #dddddd;
+
+    padding-top: 4rem;
+}
+
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr;
+
+    gap: 3rem;
+
+    padding-bottom: 3rem;
+}
+
+
+.footer-logo {
+    display: inline-block;
+
+    margin-bottom: 1rem;
+}
+
+
+.site-footer h3 {
+    color: var(--white);
+
+    margin-bottom: 1rem;
+}
+
+
+.site-footer a {
+    display: block;
+
+    margin-bottom: 0.5rem;
+}
+
+
+.site-footer a:hover {
+    color: var(--secondary);
+}
+
+
+.footer-bottom {
+    border-top: 1px solid #444444;
+
+    text-align: center;
+
+    padding: 1.5rem;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   11. PAGE HERO
+   Used on About, Services, Donate and Contact pages.
+   ========================================================= */
+
+.page-hero {
+    background-color: var(--light);
+
+    padding: 5rem 0;
+}
+
+
+.page-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+
+    line-height: 1;
+
+    color: var(--dark);
+
+    margin-bottom: 1rem;
+}
+
+
+.page-hero p:last-child {
+    max-width: 40rem;
+
+    font-size: 1.1rem;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   12. TWO COLUMN CONTENT
+   ========================================================= */
+
+.two-column {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 4rem;
+
+    align-items: start;
+}
+
+
+.two-column p {
+    margin-bottom: 1rem;
+
+    color: var(--text);
+}
+
+
+.about-box {
+    background-color: var(--primary);
+
+    color: var(--white);
+
+    padding: 2.5rem;
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+
+.about-box h3 {
+    font-size: 1.5rem;
+
+    margin-bottom: 0.5rem;
+}
+
+
+.about-box p {
+    color: #f5f5f5;
+
+    margin-bottom: 2rem;
+}
+
+
+/* =========================================================
+   13. SERVICE CARDS
+   ========================================================= */
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+}
+
+
+.service-card {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.service-card:hover {
+    transform: translateY(-0.4rem);
+
+    box-shadow: var(--shadow);
+}
+
+
+.service-card img {
+    width: 100%;
+
+    height: 15rem;
+
+    object-fit: cover;
+}
+
+
+.service-content {
+    padding: 1.5rem;
+}
+
+
+.service-content h3 {
+    margin-bottom: 0.75rem;
+
+    color: var(--dark);
+}
+
+
+.service-content p {
+    color: var(--text);
+}
+
+
+/* =========================================================
+   14. DONATION PAGE
+   ========================================================= */
+
+.donation-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.5rem;
+}
+
+
+.donation-grid > div:first-child {
+    grid-column: 1 / -1;
+
+    margin-bottom: 1rem;
+}
+
+
+.support-card {
+    padding: 2rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    background-color: var(--white);
+
+    box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.04);
+}
+
+
+.support-card h3 {
+    font-size: 1.4rem;
+
+    margin-bottom: 0.75rem;
+}
+
+
+.support-card p {
+    color: var(--text);
+
+    margin-bottom: 1.5rem;
+}
+
+
+/* =========================================================
+   15. CONTACT PAGE
+   ========================================================= */
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 4rem;
+}
+
+
+.contact-details {
+    margin-top: 2rem;
+
+    padding: 1.5rem;
+
+    border-left: 4px solid var(--secondary);
+
+    background-color: var(--light);
+}
+
+
+.contact-form {
+    padding: 2rem;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow);
+}
+
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-weight: 700;
+
+    margin-bottom: 0.5rem;
+}
+
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    padding: 0.8rem 1rem;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 0.5rem;
+
+    background-color: var(--white);
+
+    color: var(--dark);
+}
+
+
+/* Input focus state */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: var(--primary);
+
+    outline: none;
+
+    box-shadow: 0 0 0 3px rgba(123, 63, 114, 0.12);
+}
+
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* =========================================================
+   16. TABLET BREAKPOINT
+   900px and below
+   ========================================================= */
+
+@media (max-width: 56.25rem) {
+
+    .navigation {
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 1rem 0;
+    }
+
+
+    .main-nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 0.8rem 1.25rem;
+    }
+
+
+    .hero {
+        padding: 4rem 0;
+    }
+
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+
+
+    .hero-image {
+        max-width: 40rem;
+
+        margin: 0 auto;
+    }
+
+
+    .feature-grid,
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .two-column,
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .cta-content {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+}
+
+
+/* =========================================================
+   17. MOBILE BREAKPOINT
+   600px and below
+   ========================================================= */
+
+@media (max-width: 37.5rem) {
+
+    body {
+        font-size: 0.95rem;
+    }
+
+
+    .container {
+        width: 92%;
+    }
+
+
+    .navigation {
+        align-items: center;
+    }
+
+
+    .logo {
+        font-size: 1.35rem;
+    }
+
+
+    .main-nav {
+        width: 100%;
+
+        gap: 0.5rem 1rem;
+    }
+
+
+    .main-nav a {
+        font-size: 0.85rem;
+    }
+
+
+    .hero {
+        padding: 3rem 0;
+    }
+
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .btn {
+        width: 100%;
+    }
+
+
+    .section {
+        padding: 3.5rem 0;
+    }
+
+
+    .feature-grid,
+    .service-grid,
+    .donation-grid,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .donation-grid > div:first-child {
+        grid-column: auto;
+    }
+
+
+    .page-hero {
+        padding: 3.5rem 0;
+    }
+
+
+    .page-hero h1 {
+        font-size: 2.5rem;
+    }
+
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+
+    .footer-grid {
+        gap: 2rem;
+    }
+
+}
+
+
+/* =========================================================
+   18. REDUCED MOTION
+   Accessibility improvement for users who prefer
+   reduced animations.
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+}
+
+/* =========================================================
+   PART 3 ADDITIONS: interactivity, forms, events, gallery
+   ========================================================= */
+.accordion { max-width: 50rem; margin: 2rem auto 0; }
+.accordion-btn { width: 100%; text-align: left; padding: 1rem 1.25rem; background: var(--light); border: 1px solid var(--border); border-radius: var(--radius); font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; margin-top: .75rem; transition: background .3s; }
+.accordion-btn:hover, .accordion-btn:focus-visible { background: #f0e6ee; }
+.accordion-btn::after { content: '+'; color: var(--primary); }
+.accordion-btn[aria-expanded="true"]::after { content: '\2212'; }
+.accordion-panel { padding: 1rem 1.25rem; border: 1px solid var(--border); border-top: 0; border-radius: 0 0 var(--radius) var(--radius); }
+
+.modal, .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.75); display: flex; align-items: center; justify-content: center; z-index: 1000; padding: 1rem; animation: fadeIn .3s; }
+.modal[hidden], .lightbox[hidden], .accordion-panel[hidden], #quote[hidden] { display: none; }
+.modal-box { background: var(--white); padding: 2rem; border-radius: var(--radius); max-width: 28rem; position: relative; }
+.modal-close { position: absolute; top: .5rem; right: .75rem; background: none; border: 0; font-size: 1.75rem; cursor: pointer; }
+.lightbox figure { max-width: 60rem; color: #fff; text-align: center; }
+.lightbox img { max-height: 80vh; margin: 0 auto 1rem; border-radius: .5rem; }
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; }
+.gallery img { width: 100%; height: 12rem; object-fit: cover; border-radius: var(--radius); cursor: zoom-in; transition: transform .3s, box-shadow .3s; }
+.gallery img:hover { transform: scale(1.03); box-shadow: var(--shadow); }
+
+.event-tools { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.event-tools input, .event-tools select { padding: .8rem 1rem; border: 1px solid #ccc; border-radius: .5rem; width: 100%; }
+.event-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+.event-card { padding: 1.5rem; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); transition: transform .3s; }
+.event-card:hover { transform: translateY(-4px); }
+.event-card .tag { background: var(--secondary); color: var(--dark); font-size: .75rem; font-weight: 700; padding: .2rem .6rem; border-radius: 1rem; }
+.event-card h3 { margin: .75rem 0 .25rem; color: var(--primary-dark); }
+.event-card .meta { font-size: .875rem; color: var(--primary); margin-bottom: .5rem; }
+.fade-in { animation: fadeIn .5s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+#map { height: 20rem; border-radius: var(--radius); margin-top: 1.5rem; z-index: 1; }
+.error { color: #b00020; font-size: .85rem; min-height: 1.1rem; margin-top: .25rem; }
+.form-group [aria-invalid="true"] { border-color: #b00020; }
+.form-status { margin-top: 1rem; font-weight: 700; }
+.form-status.good { color: #1b6e2e; } .form-status.bad { color: #b00020; }
+#quote { margin-top: 1.5rem; padding: 1.25rem; background: var(--light); border-left: 4px solid var(--secondary); border-radius: var(--radius); }
+.skip-link { position: absolute; left: -999px; } .skip-link:focus { left: 1rem; top: 1rem; background: #fff; padding: .5rem 1rem; z-index: 2000; }
+@media (max-width: 56.25rem) { .event-tools { grid-template-columns: 1fr; } }

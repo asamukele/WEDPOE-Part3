@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Enquire about sponsoring a learner, outfit or beauty package, or volunteering with The Matric Dance Foundation and get an instant estimate.">
+
+    <title>Enquiry | The Matric Dance Foundation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="The Matric Dance Foundation">
+    <meta property="og:type" content="website">
+</head>
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <div class="container navigation">
+
+            <a href="index.html" class="logo">
+               The  Matric<span>Dance Foundation</span>
+            </a>
+
+            <nav class="main-nav">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="service.html">What We Do</a>
+                <a href="events.html">Events</a>
+                <a href="donate.html">Support Us</a>
+                <a href="enquiry.html" class="active">Enquiry</a>
+                <a href="contact.html">Contact</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+<section class="page-hero"><div class="container"><p class="eyebrow">ASK US</p><h1>Make an Enquiry</h1><p>Tell us how you would like to help and get an instant cost and availability response.</p></div></section>
+<section class="section"><div class="container contact-grid">
+<div><p class="eyebrow">SPONSOR OR VOLUNTEER</p><h2>How would you like to help?</h2>
+<p>Choose an option and the number of learners. We will show you the estimated cost and current availability straight away.</p></div>
+<form class="contact-form" id="enquiry-form" data-ajax="Enquiry" novalidate>
+<div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" data-rule="name" autocomplete="name"><div class="error" role="alert"></div></div>
+<div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" data-rule="email" autocomplete="email"><div class="error" role="alert"></div></div>
+<div class="form-group"><label for="topic">I am interested in</label><select id="topic" name="topic" data-rule="select"><option value="outfit">Sponsoring outfits</option><option value="beauty">Sponsoring hair &amp; beauty</option><option value="sponsor">Sponsoring a full learner</option><option value="volunteer">Volunteering</option></select><div class="error" role="alert"></div></div>
+<div class="form-group"><label for="learners">Number of learners</label><input type="number" id="learners" name="learners" min="1" max="500" value="1" data-rule="number"><div class="error" role="alert"></div></div>
+<button type="submit" class="btn btn-primary">Submit Enquiry</button>
+<p class="form-status" aria-live="polite"></p>
+<div id="quote" hidden></div>
+</form></div></section>
+</main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <a href="index.html" class="logo footer-logo">
+                   The  Matric<span>Dance Foundation</span>
+                </a>
+
+                <p>
+                    Creating memories and opening doors.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <a href="index.html">Home</a>
+                <a href="service.html">What We Do</a>
+                <a href="donate.html">Support Us</a>
+
+            </div>
+
+
+            <div>
+
+                <h3>Contact</h3>
+
+                <p>info@TheMatricDanceFoundation.org</p>
+                <p>South Africa</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                &copy; 2026 The Matric Dance Foundation.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+    <script src="js/script.js" defer></script>
+</body>
+
+</html>
